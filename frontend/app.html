@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мой дневник · EdiEdu</title>
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Literata:ital,opsz,wght@0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,500&family=Onest:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/">Edi<b>Edu</b><span class="dot"></span></a>
+    <nav>
+      <span class="small muted" id="hello"></span>
+      <a href="/method">Методика</a>
+      <button class="btn small ghost" id="logout">Выйти</button>
+    </nav>
+  </div>
+</header>
+<div class="banner" id="demo-banner" hidden>
+  <div class="wrap"><b>Демо-режим.</b> <span>Данные за прошлые дни синтетические, их сгенерировала программа. Отметь сегодняшний день и посмотри, как всё пересчитается.</span></div>
+</div>
+
+<main class="wrap page">
+  <nav class="appbar" role="tablist">
+    <button role="tab" data-view="today" class="on">Сегодня</button>
+    <button role="tab" data-view="picture">Моя картина</button>
+    <button role="tab" data-view="patterns">Закономерности</button>
+    <button role="tab" data-view="experiments">Эксперименты</button>
+    <button role="tab" data-view="profile">Профиль</button>
+  </nav>
+
+  <!-- СЕГОДНЯ -->
+  <section class="view on" id="view-today">
+    <div class="view-head">
+      <div>
+        <p class="eyebrow" id="today-eyebrow">Отметка дня</p>
+        <h2 id="today-title">Как прошёл день?</h2>
+      </div>
+      <div class="days" id="day-picker" aria-label="Выбор дня"></div>
+    </div>
+    <div class="two-col">
+      <form class="card" id="checkin-form" novalidate>
+        <div class="q">
+          <div class="q-title"><h4>Сколько спал(а) прошлой ночью?</h4><span class="hint">подросткам нужно 8–10 ч</span></div>
+          <div class="q-row"><div class="stepper" data-field="sleep_hours" data-step="0.5" data-min="0" data-max="16" data-unit="ч" data-start="7.5"></div></div>
+        </div>
+        <div class="q">
+          <div class="q-title"><h4>Как спалось?</h4></div>
+          <div class="scale" data-field="sleep_quality" data-kind="good" data-labels="Ужасно|Плохо|Нормально|Хорошо|Отлично"></div>
+        </div>
+        <div class="q">
+          <div class="q-title"><h4>Настроение</h4><span class="hint">обязательно</span></div>
+          <div class="scale" data-field="mood" data-kind="good" data-labels="Паршиво|Так себе|Нормально|Хорошо|Отлично"></div>
+        </div>
+        <div class="q">
+          <div class="q-title"><h4>Насколько был(а) напряжён(а)?</h4><span class="hint">обязательно</span></div>
+          <div class="scale" data-field="stress" data-kind="bad" data-labels="Спокойно|Немного|Заметно|Сильно|На пределе"></div>
+        </div>
+        <div class="q">
+          <div class="q-title"><h4>Энергия</h4></div>
+          <div class="scale" data-field="energy" data-kind="good" data-labels="Нет сил|Мало|Средне|Бодро|Полно сил"></div>
+        </div>
+        <div class="q">
+          <div class="q-title"><h4>Учёба после уроков</h4><span class="hint">домашка, репетиторы, подготовка</span></div>
+          <div class="q-row"><div class="stepper" data-field="study_hours" data-step="0.5" data-min="0" data-max="16" data-unit="ч" data-start="2"></div></div>
+        </div>
+        <div class="q">
+          <div class="q-title"><h4>Экран не для учёбы</h4><span class="hint">соцсети, видео, игры</span></div>
+          <div class="q-row"><div class="stepper" data-field="screen_hours" data-step="0.5" data-min="0" data-max="20" data-unit="ч" data-start="3"></div></div>
+        </div>
+        <div class="q">
+          <div class="q-title"><h4>Движение</h4><span class="hint">прогулка, спорт, физра, дорога пешком</span></div>
+          <div class="q-row"><div class="stepper" data-field="activity_min" data-step="10" data-min="0" data-max="600" data-unit="мин" data-start="30"></div></div>
+        </div>
+        <div class="q">
+          <div class="q-title"><h4>Что было особенного?</h4><span class="hint">необязательно</span></div>
+          <div class="chips" id="tags"></div>
+        </div>
+        <div class="q">
+          <label class="field" style="margin:0"><span>Заметка для себя <span class="muted">(видишь только ты)</span></span>
+            <textarea name="note" maxlength="280" placeholder="Например: перенесли контрольную, поругался с другом, наконец выспался"></textarea>
+          </label>
+        </div>
+        <p class="form-error" id="checkin-error" aria-live="polite"></p>
+        <div class="save-row">
+          <button class="btn accent" id="save-btn">Сохранить день</button>
+          <button type="button" class="linkbtn small" id="delete-day" hidden>Удалить отметку за этот день</button>
+        </div>
+      </form>
+      <aside id="today-side"></aside>
+    </div>
+  </section>
+
+  <!-- МОЯ КАРТИНА -->
+  <section class="view" id="view-picture">
+    <div class="view-head"><div><p class="eyebrow">Последние 5 недель</p><h2>Моя картина</h2></div></div>
+    <div id="picture"><p class="loading">Считаем…</p></div>
+  </section>
+
+  <!-- ЗАКОНОМЕРНОСТИ -->
+  <section class="view" id="view-patterns">
+    <div class="view-head"><div><p class="eyebrow">Что на что влияет — у тебя</p><h2>Закономерности</h2></div></div>
+    <div id="patterns"><p class="loading">Считаем…</p></div>
+  </section>
+
+  <!-- ЭКСПЕРИМЕНТЫ -->
+  <section class="view" id="view-experiments">
+    <div class="view-head"><div><p class="eyebrow">Проверить на себе</p><h2>Эксперименты</h2></div></div>
+    <div id="experiments"><p class="loading">Загружаем…</p></div>
+  </section>
+
+  <!-- ПРОФИЛЬ -->
+  <section class="view" id="view-profile">
+    <div class="view-head"><div><p class="eyebrow">Аккаунт и данные</p><h2>Профиль</h2></div></div>
+    <div id="profile"></div>
+  </section>
+</main>
+</body>
+</html>

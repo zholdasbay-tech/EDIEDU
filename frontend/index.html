@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EdiEdu — дневник самочувствия для школьников</title>
+  <meta name="description" content="30 секунд в день: сон, настроение, стресс, нагрузка. EdiEdu находит, что именно выбивает тебя из колеи, и помогает проверить, что помогает.">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Literata:ital,opsz,wght@0,7..72,500;0,7..72,600;0,7..72,700;1,7..72,500&family=Onest:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <script type="module" src="/js/landing.js"></script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="/">Edi<b>Edu</b><span class="dot"></span></a>
+    <nav>
+      <a href="#how">Как это работает</a>
+      <a href="#school">Для школ</a>
+      <a href="/method">Методика</a>
+      <button class="btn small ghost" data-open="login">Войти</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Дневник самочувствия для школьников</p>
+        <h1>Замечать, что с тобой происходит, <em>до того</em>, как накроет</h1>
+        <p class="lead">Каждый вечер 30 секунд: сколько спал, какое настроение, насколько напряжён, сколько сидел за уроками и в телефоне. Через пару недель EdiEdu покажет, что именно выбивает <em>тебя</em> из колеи. Выводы строятся на твоих данных, общих советов из интернета тут нет.</p>
+        <div class="cta">
+          <button class="btn accent" data-demo="student">Посмотреть демо ученика</button>
+          <button class="btn ghost" data-open="register">Начать вести дневник</button>
+        </div>
+        <p class="hero-note">Демо открывает аккаунт с синтетическими данными за 10 недель. Можно отметить сегодняшний день и посмотреть, как всё пересчитается.</p>
+      </div>
+
+      <div class="sheet" aria-label="Пример того, как выглядит подсказка">
+        <div class="row"><span class="eyebrow">Пример подсказки</span><span class="pill watch">Стоит присмотреться</span></div>
+        <svg viewBox="0 0 360 132" class="chart" role="img" aria-label="Сон и стресс за две недели">
+          <g fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 58 L34 52 L60 60 L86 48 L112 56 L138 84 L164 96 L190 60 L216 52 L242 88 L268 100 L294 106 L320 70 L346 62" stroke="#4c5a9e"/>
+            <path d="M8 118 L34 122 L60 116 L86 124 L112 118 L138 96 L164 88 L190 112 L216 120 L242 94 L268 84 L294 78 L320 104 L346 112" stroke="#b2412f"/>
+          </g>
+          <line x1="0" x2="360" y1="44" y2="44" stroke="#4c5a9e" opacity=".3"/>
+          <text x="356" y="38" text-anchor="end" font-family="Caveat, cursive" font-size="17" fill="#9e3d1f">8 ч — норма</text>
+        </svg>
+        <div class="chart-legend"><span style="color:#4c5a9e"><i></i>сон</span><span style="color:#b2412f"><i></i>стресс</span></div>
+        <p style="margin:12px 0 4px">В дни, когда ты спишь меньше 7 часов, стресс в среднем <b>3,6 из 5</b>, а когда 7 часов и больше — <b>2,3</b>.</p>
+        <p class="scribble">то есть дело не в «слабом характере», а в недосыпе</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap story">
+      <aside>Почему мы это делаем</aside>
+      <div>
+        <p>Нас трое, мы школьники. Каждую четверть повторяется одно и то же: СОЧ, пробники, олимпиады, репетиторы, и в какой-то момент понимаешь, что уже неделю спишь по пять часов, всё раздражает и ни на что нет сил. Обычно мы замечаем это слишком поздно.</p>
+        <p>Советы вроде «спи больше и меньше сиди в телефоне» все слышали. Но они не отвечают на вопрос, что влияет именно на тебя. У одного всё рушится от недосыпа, у другого от вечеров в телефоне, у третьего от того, что он перестал двигаться. EdiEdu смотрит на твои собственные данные и честно говорит, где видна связь, а где пока нет.</p>
+        <p class="muted small">Это не медицинское приложение, диагнозов оно не ставит. Оно помогает раньше заметить перегрузку и понять, что можно поменять.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Как это работает</h2>
+        <p class="lead">Три шага, никаких «умных браслетов». Хватит телефона и честных ответов.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>Отмечаешь день</h3>
+          <p>Восемь коротких вопросов: сон, его качество, настроение, стресс, энергия, учёба после уроков, экран не для учёбы, движение. Можно добавить метку («контрольная», «тренировка») и заметку для себя.</p>
+        </div>
+        <div class="step">
+          <h3>Видишь закономерности</h3>
+          <p>Через 14 дней EdiEdu начинает искать связи, например «после вечеров в телефоне сон хуже». Показывает только то, что прошло статистическую проверку, а слабые сигналы подписывает как «пока намёк».</p>
+        </div>
+        <div class="step">
+          <h3>Проверяешь на себе</h3>
+          <p>Выбираешь маленький эксперимент на неделю: убрать телефон за час до сна или гулять 20 минут. В конце EdiEdu сравнит «до» и «во время» и скажет, помогло ли, не помогло или пока непонятно.</p>
+        </div>
+      </div>
+
+      <div class="grid g3" style="margin-top:40px">
+        <div class="card">
+          <p class="eyebrow">Индекс перегрузки</p>
+          <p>Одно число от 0 до 100 за последнюю неделю. Рядом всегда написано, из чего оно сложилось, например «не хватает сна» или «стресс выше твоей нормы».</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Твоя норма</p>
+          <p>Сравнение идёт с тобой самим, а не со средним по стране. Если сегодня день сильно выбился из твоей обычной нормы, приложение это отметит.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Если совсем тяжело</p>
+          <p>Когда плохо несколько дней подряд, EdiEdu не станет давать советы. Оно предложит поговорить с живым человеком и покажет бесплатные телефоны доверия.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="school">
+    <div class="wrap two-col">
+      <div>
+        <p class="eyebrow">Для школ</p>
+        <h2>Психолог видит класс, а не ученика</h2>
+        <p class="lead">Обычно школьный психолог узнаёт о проблеме, когда она уже случилась. Панель EdiEdu показывает, в каком классе растёт напряжение, пока ещё можно что-то сделать: провести классный час, поговорить с учителями о нагрузке, не ставить три контрольные на одну неделю.</p>
+        <ul class="feature-list">
+          <li>Только ученики, которые сами включили «делиться со школой». Выключить можно в любой момент.</li>
+          <li>Нет имён, заметок и отдельных людей. Только средние по классу за неделю.</li>
+          <li>Если в группе меньше 5 человек, цифры не показываются совсем.</li>
+        </ul>
+        <div class="cta"><button class="btn" data-demo="school">Открыть демо-панель психолога</button></div>
+      </div>
+      <div class="card">
+        <p class="eyebrow">Так выглядит сигнал на панели</p>
+        <div class="alert high"><span class="dot"></span><div><b>10Б:</b> средний стресс 2,4 → 3,3, перегружены 48% учеников (обычно 21%). Судя по меткам, это период контрольных, хороший момент поговорить о нагрузке и сне.</div></div>
+        <p class="tiny muted" style="margin:8px 0 0">Пример формулировки. Настоящие сигналы в демо-панели считаются по синтетическим данным.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Честно о данных и о границах</h2>
+      </div>
+      <div class="limits">
+        <div class="card"><h3>Данные твои</h3><p>Их можно скачать одним файлом или удалить вместе с аккаунтом, и удаление происходит сразу. Пароль хранится только в виде хеша. Заметки видишь только ты.</p></div>
+        <div class="card"><h3>Связь ≠ причина</h3><p>Если EdiEdu пишет «после короткого сна стресс выше», это наблюдение на твоих данных, а не доказанный закон. Поэтому есть эксперименты: проверить на себе.</p></div>
+        <div class="card"><h3>Не диагноз</h3><p>Индекс перегрузки помогает вовремя заметить неладное, это не медицинский тест. Мы не лечим и не заменяем врача или психолога.</p></div>
+        <div class="card"><h3>Всё открыто</h3><p>Формулы, пороги и веса расписаны на странице <a href="/method">«Методика»</a>. Код лежит в открытом репозитории.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>EdiEdu · проект для VENTUREHACK 2026</span>
+    <span><a href="/method">Методика</a> · <a href="/docs">API</a></span>
+  </div>
+</footer>
+
+<div class="modal" id="auth" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+  <div class="card">
+    <h3 id="auth-title" class="sr">Вход</h3>
+    <div class="tabs-mini">
+      <button type="button" data-tab="login" class="on">Вход</button>
+      <button type="button" data-tab="register">Регистрация</button>
+    </div>
+    <form id="form-login" autocomplete="on">
+      <label class="field"><span>Логин</span><input type="text" name="username" autocomplete="username" required></label>
+      <label class="field"><span>Пароль</span><input type="password" name="password" autocomplete="current-password" required></label>
+      <p class="form-error" aria-live="polite"></p>
+      <button class="btn accent" style="width:100%">Войти</button>
+    </form>
+    <form id="form-register" hidden autocomplete="on">
+      <label class="field"><span>Как к тебе обращаться</span><input type="text" name="display_name" maxlength="40" placeholder="Необязательно"></label>
+      <label class="field"><span>Логин (латиница)</span><input type="text" name="username" autocomplete="username" required minlength="3" maxlength="32"></label>
+      <label class="field"><span>Пароль, от 8 символов</span><input type="password" name="password" autocomplete="new-password" required minlength="8"></label>
+      <p class="form-error" aria-live="polite"></p>
+      <button class="btn accent" style="width:100%">Создать аккаунт</button>
+      <p class="tiny muted" style="margin:12px 0 0">Почта и телефон не нужны. Мы собираем только то, что ты сам отмечаешь.</p>
+    </form>
+    <p style="text-align:center;margin:14px 0 0"><button type="button" class="linkbtn small" data-close>Закрыть</button></p>
+  </div>
+</div>
+</body>
+</html>
